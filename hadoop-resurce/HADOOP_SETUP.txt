@@ -21,5 +21,4 @@ visit website:
 hdfs: http://localhost:50070
 mr: http://localhost:8088
 
-mr tutorials:
-http://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+
