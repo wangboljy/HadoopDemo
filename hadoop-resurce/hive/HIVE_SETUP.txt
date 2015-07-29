@@ -1,0 +1,11 @@
+download: https://hive.apache.org/downloads.html
+
+Local mode
+environment variables: https://cwiki.apache.org/confluence/display/Hive/GettingStarted#GettingStarted-RunningHive
+
+start hiveserver2: $HIVE_HOME/bin/hiveserver2
+start beeline: $HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo
+or with a sql file: $HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo -f hive_init.sql
+
+beeline doc: https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients
+DML: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
