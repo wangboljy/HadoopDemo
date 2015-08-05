@@ -10,6 +10,9 @@ CREATE TABLE invites (foo INT, bar STRING) PARTITIONED BY (ds STRING);
 SHOW TABLES;
 SHOW TABLES '.*s';
 DESCRIBE invites;
+desc formatted asin_override;
+
+add jar hdfs:///user/wangboxxxxx
 
 
 load from local: load data local inpath 'file:///home/wangboo/Desktop/ALLOW-NYP_FCST_OR_for_02.08._20.07.15.txt' overwrite into table asin_override;

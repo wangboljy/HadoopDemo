@@ -1,4 +1,0 @@
-$HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo -f /home/wangboo/myzone/HadoopDemo/hadoop-resurce/hive/test/hive_init.sql
-
-load data local inpath 'file:///home/wangboo/myzone/HadoopDemo/hadoop-resurce/hive/test/asin_override.tsv' overwrite into table asin_override;
-select * from asin_override where asin='B00YCKORLW';

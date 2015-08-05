@@ -2,6 +2,8 @@ package hmr.tutorial.customization.models;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import java.util.Arrays;
+
 /**
  * I may use this model somewhere. It could be imported.
  */
@@ -70,5 +72,22 @@ public class Asin implements Comparable<Asin> {
                 .append("fcsts", fcsts)
                 .toString();
 
+    }
+
+    // IMPORTANT: The following code is added to support deserialization. I'm using reflection to hack.
+    public Object getData(String key) throws NoSuchFieldException, IllegalAccessException {
+        if (key.equalsIgnoreCase("fcsts")) {
+            double data[] = (double[]) this.getClass().getDeclaredField(key).get(this);
+            return Arrays.toString(data);
+        }
+        return this.getClass().getDeclaredField(key).get(this);
+    }
+
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        double fcsts[] = {1, 2, 3};
+        System.out.println(Arrays.toString(fcsts));
+
+        Asin asin = new Asin("1234567890", 11.95, 101, fcsts);
+        asin.getData("asin");
     }
 }

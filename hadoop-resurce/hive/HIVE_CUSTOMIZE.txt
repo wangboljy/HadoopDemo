@@ -1,0 +1,2 @@
+SerDe: https://cwiki.apache.org/confluence/display/Hive/SerDe
+Hive storage handler: https://cwiki.apache.org/confluence/display/Hive/StorageHandlers

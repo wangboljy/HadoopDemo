@@ -1,0 +1,20 @@
+A good place to visit: http://blog.cloudera.com
+
+start hive server: $HIVE_HOME/bin/hiveserver2
+log dir: /tmp/wangboo
+copy jar file to HDFS: hadoop fs -copyFromLocal -f /home/wangboo/myzone/HadoopDemo/out/artifacts/Customization_jar/Customization.jar /user/wangboo/hive-demo/jars
+
+Basic Example 1:
+$HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo -f /home/wangboo/myzone/HadoopDemo/hadoop-resurce/hive/test/hive-override-tsv.sql
+select * from asin_override where asin='B00YCKORLW';
+
+
+Customization Example 2:
+$HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo -f /home/wangboo/myzone/HadoopDemo/hadoop-resurce/hive/test/hive-asinset-init.sql
+
+then log in again:
+$HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n wangboo
+use test_database;
+add jar hdfs:///user/wangboo/hive-demo/jars/Customization.jar;
+select * from test_database.asinset limit 5;
+select * from test_database.asinset where asin='76nb2vyhe9';

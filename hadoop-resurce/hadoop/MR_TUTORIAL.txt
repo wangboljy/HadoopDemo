@@ -5,3 +5,9 @@ https://developer.yahoo.com/hadoop/tutorial/module4.html
 intellij jarjar: http://blog.jetbrains.com/idea/2010/08/quickly-create-jar-artifact/
 copy local file to HDFS: ./bin/hadoop fs -copyFromLocal /home/wangboo/myzone/python/data/* /user/wangboo/hadoop-demo/transformer/input
 run application: ./bin/hadoop jar /home/wangboo/myzone/HadoopDemo/out/artifacts/Customization_jar/Customization.jar hmr.tutorial.customization.transformer.Transformer /user/wangboo/hadoop-demo/transformer/input /user/wangboo/hadoop-demo/transformer/output
+
+
+
+process:
+HDFS(split) --> InputFormat --> RecordReader(AsinIterator) --> <K,V> --> Mapper -->|serilization based on writable. partition+shuffle| --> Reducer
+Reducer --> RecordWriter --> OutputFormat --> HDFS(split)

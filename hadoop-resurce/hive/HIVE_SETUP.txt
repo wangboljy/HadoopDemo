@@ -9,3 +9,5 @@ or with a sql file: $HIVE_HOME/bin/beeline -u  jdbc:hive2://localhost:10000 -n w
 
 beeline doc: https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients
 DML: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML
+
+hive log: /tmp/wangboo/hive.log

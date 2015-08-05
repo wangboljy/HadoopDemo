@@ -24,6 +24,9 @@ public class AsinRecordReader extends RecordReader<Text, AsinWritable> {
     private AsinWritable value = new AsinWritable();
     private AsinIterator iterator;
 
+    public AsinRecordReader() {
+    }
+
     public AsinRecordReader(AsinIterator iterator) {
         this.iterator = iterator;
     }

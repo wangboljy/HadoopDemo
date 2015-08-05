@@ -21,6 +21,10 @@ public class AsinWritable implements WritableComparable<AsinWritable> {
         this.asin = asin;
     }
 
+    public void setAsin(Asin asin) {
+        this.asin = asin;
+    }
+
     public Asin getAsin() {
         return asin;
     }
